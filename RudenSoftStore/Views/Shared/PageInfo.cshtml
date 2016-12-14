@@ -1,0 +1,20 @@
+﻿@using RudenSoftStore.ViewModel
+@model PagingInfo
+
+<ul class="pagination">
+    @for (int page = 1; page <= Model.TotalPages; page++)
+    {
+        if (page != Model.CurrentPage)
+        {
+            //<li>@Html.ActionLink(page.ToString(),"Index","Products",new { page = page }, null)</li>
+            //<li>@Ajax.ActionLink(page.ToString(), "Index", "Products", new { page = page }, new AjaxOptions {UpdateTargetId = "productList" }, null )</li>
+            <li><a href="#" class="pageLink">@page</a></li>
+        }
+        else
+        {
+            <li class="active"><a href="#">@page</a></li>
+        }
+    }
+</ul>
+
+

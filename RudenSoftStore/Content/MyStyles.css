@@ -1,0 +1,24 @@
+﻿.productItem {
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border: 1px solid grey;
+    background-color: #d1d9f0;
+}
+
+    .productItem #title {
+        font-weight: bold;
+    }
+
+    .productItem #description {
+        font-style: italic;
+    }
+
+    .productItem .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .pageInfo{
+        text-align:center;
+    }

@@ -1,0 +1,36 @@
+﻿@using RudenSoftStore.ViewModel
+@model CartViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Your cart</h4>
+<table class="table">
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Product price</th>
+        <th>Item price</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.Cart.OrderItems)
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Quantity</td>
+            <td>$@item.Product.Price</td>
+            <td>$@item.GetPrice()</td>
+            <td>@Html.ActionLink("Delete", "RemoveFromCart", new { productId = item.Product.Id, returnUrl = Request.Url.PathAndQuery })</td>
+        </tr>
+    }
+    <tr>
+        <th colspan="3"></th>
+        <th>Total:</th>
+        <th>$@Model.Cart.TotalPrice</th>
+    </tr>
+</table>
+<div class="text-center">
+    <a class="btn btn-success" href="@Model.ReturnUrl">Continue shoping</a>
+</div>
+
