@@ -1,7 +1,15 @@
-﻿.productItem {
-    padding:10px;
-    margin-top:10px;
-    margin-bottom:10px;
+﻿._block {
+    display: block;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    background-color: #d1d9f0;
+    border: 1px solid black;
+}
+
+.productItem {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 1px solid grey;
     background-color: #d1d9f0;
 }
@@ -19,6 +27,43 @@
         margin-bottom: 10px;
     }
 
-    .pageInfo{
-        text-align:center;
-    }
+.pageInfo {
+    text-align: center;
+}
+
+
+/*--------------------Calc------------------*/
+.calc {
+    margin:10px;
+    background-color: #e6e4e4;
+    border: 1px solid grey;
+    vertical-align:middle;
+    text-align:center;
+}
+.screen td {
+    width:100%;
+    max-width:200px;
+    text-align:center;
+    padding:5px;
+}
+
+.screen .screen_text{
+    display:inline-block;
+    background-color:white;
+    border: 1px solid #e6e4e4;
+    padding:3px;
+    height:60px;
+    width:100%;
+    overflow-y:scroll;
+    text-align:right;
+    vertical-align:middle;
+}
+
+.calc button{
+    text-align:center;
+    width:50px;
+    height:50px;
+}
+.calc button:hover,.calc .screen_text:hover{
+   border-color: #3098f7;
+}
