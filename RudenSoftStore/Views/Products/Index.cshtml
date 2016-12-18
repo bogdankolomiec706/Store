@@ -1,24 +1,21 @@
 ﻿@using RudenSoftStore.ViewModel
 @model ProductListViewModel
 
-<div class="productList">
-    @Scripts.Render("~/bundles/my_scripts")
-    <div class="row">
-        @foreach (var product in Model.Products)
-        {
-            <div class="col-md-4">
-                <div class="productItem">
-                    <h2 id="title">@product.Name</h2>
-                    <p id="description">@product.Description</p>
-                    <p id="price">Price: $@product.Price</p>
-                    @Html.ActionLink("To cart", "AddToCart", "Cart", new { productId = product.Id, returnUrl = Request.Url.PathAndQuery }, new { @class = "btn btn-success" })
-                </div>
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-md-4">
+            <div class="productItem">
+                <h2 id="title">@product.Name</h2>
+                <p id="description">@product.Description</p>
+                <p id="price">Price: $@product.Price</p>
+                @Html.ActionLink("To cart", "AddToCart", "Cart", new { productId = product.Id, returnUrl = Request.Url.PathAndQuery }, new { @class = "btn btn-success" })
             </div>
-        }
+        </div>
+    }
 
-    </div>
-    <div class="row pageInfo">
-        @Html.Partial("PageInfo", Model.PagingInfo)
-    </div>
+</div>
+<div class="row pageInfo">
+    @Html.Partial("PageInfo", Model.PagingInfo)
 </div>
 

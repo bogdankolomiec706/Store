@@ -21,7 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Home")</li>
                     <li>@Html.ActionLink("Cart", "Index", "Cart",new { returnUrl = Request.Url.PathAndQuery }, null)</li>
                 </ul>
             </div>
@@ -29,8 +29,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        
+        <footer style="position:absolute; top:1600px;">
+            <hr />
             <p>&copy; @DateTime.Now.Year - Bogdan Kolomiec</p>
         </footer>
     </div>

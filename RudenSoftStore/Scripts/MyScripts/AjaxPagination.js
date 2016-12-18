@@ -1,7 +1,12 @@
-﻿$(document).on("click", ".pageLink",
+﻿$(document).ready(function () {
+    var urlProducts = '/Products/Index';
+    $('#products').load(urlProducts);
+});
+
+$(document).on("click", ".pageLink",
     function (e) {
         e.preventDefault();
-        var pageNumber = $(".pageLink").html();
+        var pageNumber = $(this).html();
         var url = "/Products/Index?page=" + pageNumber;
-        $(".productList").html("").load(url);
-    });
+        $("#products").fadeOut(200, function () { $("#products").empty().load(url).fadeIn() });
+});

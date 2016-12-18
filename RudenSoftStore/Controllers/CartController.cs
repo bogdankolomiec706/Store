@@ -30,7 +30,15 @@ namespace RudenSoftStore.Controllers
 
         public ActionResult Index(string returnUrl)
         {
+            if (returnUrl.Contains("Products/Index"))
+                returnUrl = "/Home/Index";
             return View(new CartViewModel { Cart = GetCart(), ReturnUrl = returnUrl });
+        }
+
+        public ActionResult MakeOrder()
+        {
+            Session["Cart"] = null;
+            return View();
         }
 
         public ActionResult AddToCart(int productId, string returnUrl)

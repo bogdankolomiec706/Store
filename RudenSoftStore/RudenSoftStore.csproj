@@ -201,6 +201,7 @@
     <Content Include="Views\Shared\PageInfo.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\MakeOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -31,6 +31,7 @@
     </tr>
 </table>
 <div class="text-center">
-    <a class="btn btn-success" href="@Model.ReturnUrl">Continue shoping</a>
+     @Html.ActionLink("Make order","MakeOrder","Cart",new { @class = "btn btn-success" })
+    <a class="btn btn-info" href="@Model.ReturnUrl">Continue shoping</a>
 </div>
 
