@@ -34,6 +34,15 @@ namespace RudenSoftStore.Controllers
             return PartialView(model);
         }
 
+        public ActionResult GetCategories()
+        {
+            return Json(UOW.Categories.GetAll().Select(c => new {c.Id, c.Name}));
+        }
+
+        public ActionResult ProductsByCategory(int category_id)
+        {
+            return Json(UOW.Products.Find(p => p.CategoryId == category_id).Select(p => new { p.Id, p.Name }));
+        }
 
         [HttpGet]
         public ActionResult Create()

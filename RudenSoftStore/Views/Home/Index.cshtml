@@ -6,99 +6,103 @@
     <h1>Store</h1>
 </div>
 
-<div id="task1">
-    <h3>1) Добавление элементов на страницу по кнопке</h3>
-    <button class="btn btn-default AddElement">Add element</button><br />
-</div>
-
-<div id="task2">
-    <h3>2) Калькулятор</h3>
-    <table class="calc" id="calc1">
-        <tr class="screen">
-            <td colspan="4">
-                <span class="screen_text"></span>
-            </td>
-        </tr>
-        <tr class="line">
-            <td class="item" id="7"><button>7</button></td>
-            <td class="item" id="8"><button>8</button></td>
-            <td class="item" id="9"><button>9</button></td>
-            <td class="item operation" id="/"><button>/</button></td>
-        </tr>
-        <tr class="line">
-            <td class="item" id="4"><button>4</button></td>
-            <td class="item" id="5"><button>5</button></td>
-            <td class="item" id="6"><button>6</button></td>
-            <td class="item operation" id="*"><button>X</button></td>
-        </tr>
-        <tr class="line">
-            <td class="item" id="1"><button>1</button></td>
-            <td class="item" id="2"><button>2</button></td>
-            <td class="item" id="3"><button>3</button></td>
-            <td class="item operation" id="-"><button>-</button></td>
-        </tr>
-        <tr class="line">
-            <td class="item" id="."><button>.</button></td>
-            <td class="item" id="0"><button>0</button></td>
-            <td class="item operation" id="+"><button>+</button></td>
-            <td class="item operation" id="="><button>=</button></td>
-        </tr>
-    </table>
-
-</div>
-
-
-<div class="toggle">
-    <form>
-        <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" checked="checked" /><br />
-        <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" /><br />
-        <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" checked="checked" /><br />
-        <label for="name">Name</label><input type="text" name="name" id="name" /><br />
-        <select id="choose">
-            <option value="option1">Option1</option>
-            <option value="option2">Option2</option>
-            <option value="option3">Option3</option>
-            <option value="defualt" selected="selected">Defualt</option>
-        </select>
-        <br />
-        <select id="val">
-            <option value="option1">val1</option>
-            <option value="option2">val2</option>
-            <option value="option3">val3</option>
-            <option value="defualt" selected="selected">Defualt</option>
-        </select>
-    </form>
-
-</div>
-<br /><br /><br/>
-<div class="task2">
-    <p>
-        <label for="check1">Checkbox1</label><br />
-        <label for="check2">Checkbox2</label><br />
-        <label for="check3">Checkbox3</label><br />
-    </p>
-    <div>My target (shouldn't be chosen)</div>
-    <p>
-        <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" checked="checked" /><br />
-        <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" checked="checked" /><br />
-        <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" checked="checked" /><br />
-    </p>
-    <div>My target (should be chosen)</div>
-    <p>
-        <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" /><br />
-        <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" /><br />
-        <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" /><br />
-    </p>
-    <div>My target (shouldn't be chosen)</div>
-    <p>
-        <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" checked="checked" /><br />
-        <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" /><br />
-        <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" checked="checked" /><br />
-    </p>
-    <div>My target (should be chosen)</div>
-</div>
-
 <div class="row">
+    <div class="col-md-4">
+        <div class="task0">
+            <h3>3) Напишите селектор, который позволяет выделить все Div, которые непосредственно за параграфами, содержащими выделенные галочки.</h3>
+            <p>
+                <label for="check1">Checkbox1</label><br />
+                <label for="check2">Checkbox2</label><br />
+                <label for="check3">Checkbox3</label><br />
+            </p>
+            <div>My target (shouldn't be chosen)</div>
+            <p>
+                <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" checked="checked" /><br />
+                <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" checked="checked" /><br />
+                <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" checked="checked" /><br />
+            </p>
+            <div>My target (should be chosen)</div>
+            <p>
+                <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" /><br />
+                <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" /><br />
+                <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" /><br />
+            </p>
+            <div>My target (shouldn't be chosen)</div>
+            <p>
+                <label for="check1">Checkbox1</label> <input type="checkbox" name="check1" id="check1" checked="checked" /><br />
+                <label for="check2">Checkbox2</label> <input type="checkbox" name="check2" id="check2" /><br />
+                <label for="check3">Checkbox3</label> <input type="checkbox" name="check3" id="check3" checked="checked" /><br />
+            </p>
+            <div>My target (should be chosen)</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="task1">
+            <h3>6.1) Добавление элементов на страницу по кнопке</h3>
+            <button class="btn btn-default AddElement">Add element</button><br />
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="task2">
+            <h3>6.2) Калькулятор</h3>
+            <table class="calc" id="calc1">
+                <tr class="screen">
+                    <td colspan="4">
+                        <span class="screen_text"></span>
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td class="item" id="7"><button>7</button></td>
+                    <td class="item" id="8"><button>8</button></td>
+                    <td class="item" id="9"><button>9</button></td>
+                    <td class="item operation" id="/"><button>/</button></td>
+                </tr>
+                <tr class="line">
+                    <td class="item" id="4"><button>4</button></td>
+                    <td class="item" id="5"><button>5</button></td>
+                    <td class="item" id="6"><button>6</button></td>
+                    <td class="item operation" id="*"><button>X</button></td>
+                </tr>
+                <tr class="line">
+                    <td class="item" id="1"><button>1</button></td>
+                    <td class="item" id="2"><button>2</button></td>
+                    <td class="item" id="3"><button>3</button></td>
+                    <td class="item operation" id="-"><button>-</button></td>
+                </tr>
+                <tr class="line">
+                    <td class="item" id="."><button>.</button></td>
+                    <td class="item" id="0"><button>0</button></td>
+                    <td class="item operation" id="+"><button>+</button></td>
+                    <td class="item operation" id="="><button>=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="com-md-4">
+        <div id="task3">
+            <h3>6.3) Динамически сформированный выпадающий список</h3>
+            <form>
+                <label for="Category">Category: </label>
+                <select id="Category"><option id="default" value="0" selected>Choose cateogry</option></select><br />
+                <label for="Category">Product: </label>
+                <select id="Product" disabled><option id="default" value="0" selected>Choose product</option></select>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div id="task4">
+            <h3>6.4) Часы или таймер (функции setTimeout и setInterval)</h3>
+            <button id="start">Запустить часы</button><br />
+            <button id="stop" disabled="disabled">Остановить часы</button><br />
+            <br />
+            <h4 id="clock"></h4>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
     <div class="col-md-12">
     </div>
     @Html.ActionLink("Add product","Create","Products",null,new { @class ="btn btn-info" })

@@ -67,3 +67,7 @@
 .calc button:hover,.calc .screen_text:hover{
    border-color: #3098f7;
 }
+
+#task4 button{
+    margin: 5px;
+}
