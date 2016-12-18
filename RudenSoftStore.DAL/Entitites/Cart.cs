@@ -20,7 +20,6 @@ namespace RudenSoftStore.DAL.Entitites
 
         public ICollection<OrderItem> OrderItems { get; } = new List<OrderItem>();
 
-
         //METHODS
         public void AddItem(Product product, int Quantity)
         {
@@ -34,7 +33,6 @@ namespace RudenSoftStore.DAL.Entitites
                 orderItem.Quantity += Quantity;
             }
         }
-
         public void RemoveItem(Product product)
         {
             OrderItem item = OrderItems.Where(i => i.Product.Id == product.Id).FirstOrDefault();
@@ -43,12 +41,10 @@ namespace RudenSoftStore.DAL.Entitites
                 OrderItems.Remove(item);
             }
         }
-
         public void ComputeTotalValue()
         {
             totalPrice = OrderItems.Sum(i => i.Product.Price * i.Quantity);
         }
-
         public void ClearCart()
         {
             OrderItems.Clear();

@@ -16,7 +16,6 @@ namespace RudenSoftStore.Controllers
         {
             UOW = uow;
         }
-
         private Cart GetCart()
         {
             Cart cart = (Cart)Session["Cart"];
@@ -26,6 +25,26 @@ namespace RudenSoftStore.Controllers
                 Session["Cart"] = cart;
             }
             return cart;
+        }
+        public ActionResult AddToCart(int productId, string returnUrl)
+        {
+            Product product = UOW.Products.Get(productId);
+            if (product != null)
+            {
+                GetCart().AddItem(product, 1);
+                GetCart().ComputeTotalValue();
+            }
+            return RedirectToAction("Index", new { returnUrl });
+        }
+        public ActionResult RemoveFromCart(int productId, string returnUrl)
+        {
+            Product product = UOW.Products.Get(productId);
+            if (product != null)
+            {
+                GetCart().RemoveItem(product);
+                GetCart().ComputeTotalValue();
+            }
+            return RedirectToAction("Index", new { returnUrl });
         }
 
         public ActionResult Index(string returnUrl)
@@ -41,26 +60,6 @@ namespace RudenSoftStore.Controllers
             return View();
         }
 
-        public ActionResult AddToCart(int productId, string returnUrl)
-        {
-            Product product = UOW.Products.Get(productId);
-            if(product != null)
-            {
-                GetCart().AddItem(product, 1);
-                GetCart().ComputeTotalValue();
-            }
-            return RedirectToAction("Index", new { returnUrl });
-        }
 
-        public ActionResult RemoveFromCart(int productId, string returnUrl)
-        {
-            Product product = UOW.Products.Get(productId);
-            if(product != null)
-            {
-                GetCart().RemoveItem(product);
-                GetCart().ComputeTotalValue();
-            }
-            return RedirectToAction("Index", new { returnUrl });
-        }
     }
 }

@@ -13,10 +13,12 @@
             componentTypes: []//listed element types
         },
         init: function (options) {
-            compAdder.options = $.extend(compAdder.options, options);
+            compAdder.options.componentTypes = $.extend(compAdder.options.componentTypes, options);
         },
         add: function (compTag, content, quantity, inline, destionation) {
             //если тег содержится в списке допустимых
+            lib.log($.inArray(compTag, compAdder.options.componentTypes));
+            lib.log(compAdder.options.componentTypes);
             if ($.inArray(compTag, compAdder.options.componentTypes) != -1) {
                 var startTag = "<" + compTag + ">";
                 var endTag = "<" + compTag + "/>";
@@ -238,7 +240,7 @@
     DynamicList.init({ parentId: "#Category", childId: "#Product" });
 
 
-    //Таймер
+    //ТАЙМЕР
     var Timer = {
         timerId: '',
         startSelector: '',
@@ -313,6 +315,8 @@
 
     Timer.init({ target: '#task4' });
 
+
+    //Напишите селектор, который позволяет выделить все Div, которые непосредственно за параграфами, содержащими выделенные галочки
     $('.task0 p+div').filter(
         function () {
             console && lib.log($(this).prev('p').has('input[type=checkbox]:checked').text() == "");
@@ -323,22 +327,4 @@
                 return false;
         }).css('background-color', 'yellow');
 
-    $('#choose').change(function () {
-        var element = $(this);
-        var val = $('#choose option:selected').val();
-        alert(val);
-        $('#val option[value=' + val + ']').prop('selected', true);
-    });
-
-    $('.btnToggle').click(function (e) {
-        e.preventDefault();
-        var boxes = $('.toggle input[type="checkbox"]');
-        boxes.each(function () {
-            var item = $(this);
-            if (!item.is('checked')) {
-                item.prop('checked', true);//attr('checked','checked');
-            }
-
-        });
-    });
 });
